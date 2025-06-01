@@ -13,7 +13,10 @@ public interface Numerology {
             reducedNumber=reducedNumber+number%10;
             number=number/10;
         }
-
+        // If the reduced number is greater than 9, reduce it again
+        if (reducedNumber > 9) {
+            reducedNumber = reduceNumberSingleDigit(reducedNumber);
+        }
         return reducedNumber;
     }
 }

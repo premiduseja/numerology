@@ -16,6 +16,9 @@ public class NumerologyController {
     @Autowired
     NameNumerology chaldeanNameNumerology;
 
+    @Autowired
+    NameNumerology pythagoreanNameNumerology;
+
     @GetMapping("/nameNumber/{nameChartType}/{firstName}")
     public int getNameNumber(@PathVariable("firstName") String firstName,
                              @PathVariable("nameChartType") NameChartType nameChartType){
@@ -24,8 +27,9 @@ public class NumerologyController {
 
         if (nameChartType == NameChartType.CHALDEAN){
             nameNumber=chaldeanNameNumerology.getNameNumber(firstName);
+        }else if (nameChartType == NameChartType.PYTHAGOREAN){
+            nameNumber=pythagoreanNameNumerology.getNameNumber(firstName);
         }
-
         return nameNumber;
 
     }
