@@ -42,4 +42,16 @@ class ChaldeanNameNumerologyTest {
     void testGetNameNumber_InvalidCharacter() {
         assertThrows(NullPointerException.class, () -> numerology.getNameNumber("John!"));
     }
+
+    @Test
+    void reduceNumberSingleDigit_SumsDigitsCorrectly() {
+        // 123 -> 1+2+3 = 6
+        assertEquals(6, numerology.reduceNumberSingleDigit(123));
+        // 987 -> 9+8+7 = 24 -> 2+4 = 6
+        assertEquals(6, numerology.reduceNumberSingleDigit(987));
+        // 9 -> 9
+        assertEquals(9, numerology.reduceNumberSingleDigit(9));
+        // 0 -> 0
+        assertEquals(0, numerology.reduceNumberSingleDigit(0));
+    }
 }
