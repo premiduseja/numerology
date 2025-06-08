@@ -25,8 +25,8 @@ class BirthNumberTest {
     @Test
     void testGetDestinyNumber_ValidInput() {
         BirthNumber birthNumber = new BirthNumber();
-        assertEquals(4, birthNumber.getDestinyNumber("01-02-1990"));
-        assertEquals(8, birthNumber.getDestinyNumber("12-31-1999"));
+        assertEquals(4, birthNumber.getDestinyNumber("1990-01-02"));
+        assertEquals(8, birthNumber.getDestinyNumber("1999-12-31"));
     }
 
     @Test

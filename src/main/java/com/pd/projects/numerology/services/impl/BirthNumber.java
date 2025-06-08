@@ -24,7 +24,7 @@ public class BirthNumber implements BirthDateNumerology {
      * The destiny number is calculated by summing the digits of the date of birth
      * until a single digit is obtained.
      *
-     * @param fullBirthDate String representing the date of birth in the format "mm-dd-yyyy" or similar.
+     * @param fullBirthDate String representing the date of birth in the format "YYYY-MM-DD" or similar.
      * @return the single-digit destiny number
      */
     @Override
@@ -34,12 +34,12 @@ public class BirthNumber implements BirthDateNumerology {
         }
         String[] dateParts = fullBirthDate.split("-");
         if (dateParts.length < 3) {
-            throw new IllegalArgumentException("Full birth date must be in the format 'mm-dd-yyyy'");
+            throw new IllegalArgumentException("Full birth date must be in the format 'YYYY-MM-DD'");
         }
 
-        int day = Integer.parseInt(dateParts[1]);
-        int month = Integer.parseInt(dateParts[0]);
-        int year = Integer.parseInt(dateParts[2]);
+        int day = Integer.parseInt(dateParts[2]);
+        int month = Integer.parseInt(dateParts[1]);
+        int year = Integer.parseInt(dateParts[0]);
 
         if (day < 1 || day > 31 || month < 1 || month > 12 || year < 1) {
             throw new IllegalArgumentException("Invalid date components in full birth date: " + fullBirthDate);
