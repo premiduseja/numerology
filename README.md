@@ -7,6 +7,7 @@ Code base for numerology REST apis.
 - Java
 - Spring boot
 - Maven
+- Docker
 
 ## Local Setup
 Simply clone the project and run it on your IDE.
